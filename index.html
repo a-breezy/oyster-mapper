@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+   <head>
+      <title>Oyster Mapper</title>
+   </head>
+   <body>
+      <h1>Welcome to the Oyster Tracker!</h1>
+      <h2>The date and time on the server is: {{ time }}</h2>
+      <p>Here you can see oyster producers from all around the world</p>
+      <p>Help us grow out oyster database by filling out the form below with your oyster farm!</p>
+      <form action="./form-submit.html" method="post">
+        <ul>
+          <li>
+            <label for="farm-name">Farm name:</label>
+            <input type="text" id="farm-name" name='farm-name' placeholder="enter name here" />
+          </li>
+          <li>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="enter city" />
+          </li>
+          <li>
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" placeholder="enter state" />
+          </li>
+          <li>
+            <label for="zipcode">Zipcode:</label>
+            <input type="text" id="zipcode" name="zipcode" placeholder="enter zipcode" />
+          </li>
+          <li>
+            <p>Disregard this aspect. it's for future testing</p>
+            <label for="coordinates">Coordinates:</label>
+            <input type="text" id="coordinates" name="coordinates" placeholder="enter coordinates" />
+          </li>
+          <li>
+            <label for="zipcode">Zipcode:</label>
+            <input type="text" id="zipcode" name="zipcode" placeholder="enter zipcode" />
+          </li>
+          <li>
+            <label for="species">Species:</label>
+            <input type="text" id="species" name="species" placeholder="enter species" />
+          </li>
+          <li>
+            <label for="tasting-notes">Tasting Notes:</label>
+            <input type="text" id="tasting-notes" name="tasting-notes" placeholder="enter notes" />
+          </li>
+          <li>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" placeholder="Please enter your thoughts on the oyster" rows=4></textarea>
+          </li>
+          <li>
+            <input type="radio" id="small" name="size" value="small">
+            <label for="small">Small</label><br>
+            <input type="radio" id="medium" name="size" value="medium">
+            <label for="medium">Medium</label><br>
+            <input type="radio" id="large" name="size" value="large">
+            <label for="large">Large</label>
+          </li>
+        </ul>
+        <input type="submit" value="Submit">
+      </form>
+      <!--
+          {
+            "id": 0, 
+            "farm_name": "Oysther", 
+            "location": {
+                "city":"Georgetown", 
+                "state":"Maine", 
+                "zipcode":"04903", 
+                "coordinates": {
+                    "lat": "0321", 
+                    "long": "1230"
+                    }, 
+                "species": "the best", 
+                "description": "A delicious blend of sweetness and salinity", 
+                "tasting_notes": ["sweet", "salinity"], 
+            "size":"medium"
+            } 
+    -->
+   </body>
+</html>
