@@ -22,44 +22,44 @@ def index():
 
 
 # complex logic will come later
-# # Create
-# @app.route('/oysters', methods=['POST'])
-# def add_oyster():
-#     new_oyster = request.get_json()
-#     oysters.append(new_oyster)
-#     return jsonify({"message": "oyster created"}), 201
+# Create
+@app.route('/oysters', methods=['POST'])
+def add_oyster():
+    new_oyster = request.get_json()
+    oysters.append(new_oyster)
+    return jsonify({"message": "oyster created"}), 201
 
-# # Read (Get all oysters)
-# @app.route('/oysters', methods=['GET'])
-# def get_oysters():
-#     return jsonify(oysters)
+# Read (Get all oysters)
+@app.route('/oysters', methods=['GET'])
+def get_oysters():
+    return jsonify(oysters)
 
-# # Read (Get a specific oyster by ID)
-# @app.route('/oysters/<int:id>', methods=['GET'])
-# def get_oyster(id):
-#     oyster = next((oyster for oyster in oysters if oyster["id"] == id), None)
-#     if oyster:
-#         return jsonify(oyster)
-#     return jsonify({"message": "oyster not found"}), 404
+# Read (Get a specific oyster by ID)
+@app.route('/oysters/<int:id>', methods=['GET'])
+def get_oyster(id):
+    oyster = next((oyster for oyster in oysters if oyster["id"] == id), None)
+    if oyster:
+        return jsonify(oyster)
+    return jsonify({"message": "oyster not found"}), 404
 
-# # Update
-# @app.route('/oysters/<int:id>', methods=['PUT'])
-# def update_oyster(id):
-#     oyster = next((oyster for oyster in oysters if oyster["id"] == id), None)
-#     if oyster:
-#         updated_data = request.get_json()
-#         oyster.update(updated_data)
-#         return jsonify({"message": "oyster updated"})
-#     return jsonify({"message": "oyster not found"}), 404
+# Update
+@app.route('/oysters/<int:id>', methods=['PUT'])
+def update_oyster(id):
+    oyster = next((oyster for oyster in oysters if oyster["id"] == id), None)
+    if oyster:
+        updated_data = request.get_json()
+        oyster.update(updated_data)
+        return jsonify({"message": "oyster updated"})
+    return jsonify({"message": "oyster not found"}), 404
 
-# # Delete
-# @app.route('/oysters/<int:id>', methods=['DELETE'])
-# def delete_oyster(id):
-#     oyster = next((oyster for oyster in oysters if oyster["id"] == id), None)
-#     if oyster:
-#         oysters.remove(oyster)
-#         return jsonify({"message": "oyster deleted"})
-#     return jsonify({"message": "oyster not found"}), 404
+# Delete
+@app.route('/oysters/<int:id>', methods=['DELETE'])
+def delete_oyster(id):
+    oyster = next((oyster for oyster in oysters if oyster["id"] == id), None)
+    if oyster:
+        oysters.remove(oyster)
+        return jsonify({"message": "oyster deleted"})
+    return jsonify({"message": "oyster not found"}), 404
 
 if __name__ == '__main__':
     app.run(debug=True, host='192.168.1.124')
