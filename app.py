@@ -1,3 +1,4 @@
+# flask import and datetime
 from flask import Flask, render_template, request, jsonify
 import datetime
 
@@ -13,9 +14,12 @@ def index():
     now = datetime.datetime.now()
     timeString = now.strftime("%Y-%m-%d %H:%M")
     templateData = {
-        'time': timeString
+        'time': timeString,
       }
     return render_template('index.html', **templateData)
+    # visit flask docs to render other templates: https://flask.palletsprojects.com/en/2.3.x/tutorial/templates/
+
+
 
 # complex logic will come later
 # # Create
